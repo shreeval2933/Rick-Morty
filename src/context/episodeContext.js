@@ -1,37 +1,37 @@
 import axios from "axios";
 import { useContext, useEffect, useReducer } from "react";
 import { createContext } from "react";
-import reducer from "../reducer/characterReducer.js";
+import reducer from "../reducer/episodeReducer.js";
 
-// Create a context to manage the application state
+// Create a context to manage the episode state
 const AppContext = createContext();
 
-// Rick and Morty API endpoint
-const API = "https://rickandmortyapi.com/api/character";
+// Rick and Morty API endpoint for episodes
+const API = "https://rickandmortyapi.com/api/episode";
 
-// Initial state for the application
+// Initial state for the episode application
 const initialState = {
     isLoading : false,
     isError : false,
-    characters : [],
+    episode : [],
 }
 
-
-// AppProvider component manages the application state and provides it to its children
-const AppProvider = ({children}) => {
+// EpisodeProvider component manages the episode state and provides it to its children
+const EpisodeProvider = ({children}) => {
 
     // Use reducer to manage state changes
     const [state, dispatch] = useReducer(reducer, initialState);
-    
-    // Function to fetch character data from the API
-    const getCharacter = async (url) => {
+
+    // Function to fetch episode data from the API
+    const getEpisode = async (url) => {
+        // Set loading state
         dispatch({type: "SET_LOADING"});
         try {
             let res = [];
             let promises = [];
 
             // Start from page 1 and make requests for all pages
-            for (let i = 1; i < 43; i++) {
+            for (let i = 1; i < 4; i++) {
                 promises.push(axios.get(`${url}/?page=${i}`));
             }
 
@@ -43,9 +43,9 @@ const AppProvider = ({children}) => {
                 res = [...res, ...response.data.results];
             });
 
-            // Set the characters data in the state
-            const characters = res;
-            dispatch({type: "SET_API_DATA", payload: characters});
+            // Set the episode data in the state
+            const episode = res;
+            dispatch({type: "SET_API_EPISODE_DATA", payload: episode});
 
         } catch (error) {
             // Handle API error
@@ -53,9 +53,9 @@ const AppProvider = ({children}) => {
         }
     };
     
-    // Fetch character data on component mount
+    // Fetch episode data on component mount
     useEffect(() => {
-        getCharacter(API);
+        getEpisode(API);
     }, []);
 
     // Provide state values and functions to the children components through context
@@ -63,10 +63,9 @@ const AppProvider = ({children}) => {
 };
 
 
-// Custom hook to access the application context
-const useCharacterContext = () => {
+//custom hook
+const useEpisodeContext = () => {
     return useContext(AppContext);
 };
 
-// Export the AppProvider component, AppContext, and useCharacterContext hook
-export {AppProvider, AppContext, useCharacterContext};
+export {EpisodeProvider, AppContext, useEpisodeContext};

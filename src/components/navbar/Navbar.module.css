@@ -8,9 +8,9 @@
   display: flex;
   /* grid-template-columns: auto auto auto; */
   justify-content: space-between;
-  background-color: rgb(169, 102, 94);
+  background-color: rgb(232, 118, 232);
   width: 100%;
-  min-height: 60px;
+  height: 60px;
   align-items: center;
 }
 
@@ -30,7 +30,7 @@
   font-size: 50px;
   font-family: "Acme";
   font-weight: 400;
-  color: rgb(66, 9, 9);
+  color: rgb(57, 9, 66);
 }
 
 .searchbar {
@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ca2639;
+  background-color: #eb47dd;
   color: white;
   border: none;
   border-radius: 4px;
@@ -55,7 +55,7 @@
 }
 
 .btn:hover {
-  background-color: rgb(245, 53, 53);
+  background-color: rgb(85, 12, 90);
 }
 
 .searchbar img {

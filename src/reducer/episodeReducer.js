@@ -1,5 +1,5 @@
-// CharacterReducer function handles state changes for character data in the application
-const CharacterReducer = (state, action) => {
+// EpisodeReducer function handles state changes for episode data in the application
+const EpisodeReducer = (state, action) => {
     // Switch statement to determine the type of action and update the state accordingly
     switch(action.type){
         // Action type to set loading state
@@ -9,12 +9,12 @@ const CharacterReducer = (state, action) => {
             isLoading: true,
            };
 
-        // Action type to set character data from the API
-        case "SET_API_DATA":
+        // Action type to set episode data from the API
+        case "SET_API_EPISODE_DATA":
             return{
                 ...state,
                 isLoading: false,
-                characters: action.payload,
+                episode: action.payload,
             };
         
         // Action type to handle API errors
@@ -24,11 +24,11 @@ const CharacterReducer = (state, action) => {
                 isLoading: false,
                 isError:true,
             };
-    
-            // Default case returns the current state if the action type is not matched
+        
+        // Default case returns the current state if the action type is not matched
         default:
             return state;
     };
 };
 
-export default CharacterReducer;
+export default EpisodeReducer;

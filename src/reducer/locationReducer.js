@@ -1,5 +1,5 @@
-// CharacterReducer function handles state changes for character data in the application
-const CharacterReducer = (state, action) => {
+// LocationReducer function handles state changes for location data in the application
+const LocationReducer = (state, action) => {
     // Switch statement to determine the type of action and update the state accordingly
     switch(action.type){
         // Action type to set loading state
@@ -9,12 +9,12 @@ const CharacterReducer = (state, action) => {
             isLoading: true,
            };
 
-        // Action type to set character data from the API
-        case "SET_API_DATA":
+        // Action type to set location data from the API
+        case "SET_API_LOCATION_DATA":
             return{
                 ...state,
                 isLoading: false,
-                characters: action.payload,
+                location: action.payload,
             };
         
         // Action type to handle API errors
@@ -24,11 +24,11 @@ const CharacterReducer = (state, action) => {
                 isLoading: false,
                 isError:true,
             };
-    
-            // Default case returns the current state if the action type is not matched
+        
+        // Default case returns the current state if the action type is not matched
         default:
             return state;
     };
 };
 
-export default CharacterReducer;
+export default LocationReducer;

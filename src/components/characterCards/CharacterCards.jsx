@@ -1,51 +1,48 @@
 import React from "react";
 import style from "./CharacterCards.module.css";
-import { useState, useEffect } from "react";
-import axios from "../../axios.jsx";
+import image from "../../assets/assets.js";
 import { useCharacterContext } from "../../context/characterContext.js";
 import { useFilterContext } from "../../context/filterContext.js";
+import { NavLink } from "react-router-dom";
 
-const CharacterCards = (props) => {
-  // const [apiData, setApiData] = useState([]);
-  // const [isError, setIsError] = useState("");
-
-  const { isLoading, characters } = useCharacterContext();
+const CharacterCards = () => {
+  const { isLoading } = useCharacterContext();
 
   const { filter_characters } = useFilterContext();
 
-  // const getApiData = async () => {
-  //   try {
-  //     const res = await axios.get("/character");
-  //     setApiData(res.data.results);
-  //   } catch (error) {
-  //     console.log(error);
-  //     setIsError(error.message);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getApiData();
-  // }, []);
-
+  // Display loading spinner when data is still loading
   if (isLoading) {
-    return <div>......Loading</div>;
+    return (
+      <div className={style.loader}>
+        <img src={image.loadingicon} alt="Loading..." />
+      </div>
+    );
   }
 
+  // Render the character cards on the Home page if data has been loaded
   return (
     <div className={style.charactercards}>
-      {/* {apiData.map((post) => { */}
       {filter_characters.map((post) => {
         const { id, image, name, status, origin, species, location } = post;
         return (
-          <div className={style.card} onClick={() => {}} key={id}>
-            <img src={image} alt={`photo's of ${name}`} />
-            <h2>{name}</h2>
-            <p>
-              {status} - {species}
-            </p>
-            <p>origin: {origin["name"]}</p>
-            <p>Last known location: {location["name"]}</p>
-          </div>
+          //To navigate the single character's profile page
+          <NavLink
+            to={{
+              pathname: `/singlecharacter/${id}`,
+            }}
+            key={id}
+            className={style.card}
+          >
+            <img src={image} alt={name} />
+            <div className={style.text}>
+              <h2>{name}</h2>
+              <p>
+                {status} - {species}
+              </p>
+              <p>origin: {origin["name"]}</p>
+              <p>Last known location: {location["name"]}</p>
+            </div>
+          </NavLink>
         );
       })}
     </div>

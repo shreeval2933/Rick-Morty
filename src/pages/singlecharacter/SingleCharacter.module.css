@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.singlecharacterdata {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #c463cc;
+  width: 100%;
+  padding: 30px;
+  min-height: 85vh;
+}
+
+.singlecharacter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  color: rgb(4, 1, 26);
+  font-family: "Acme";
+  width: 100%;
+  max-width: 800px;
+  border: 2px solid rgb(49, 1, 50);
+  box-shadow: inset 0 8px 20px -8px rgba(0, 0, 0, 0.5),
+    inset 0 -8px 20px -8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.singlecharacter img {
+  align-self: center;
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 12px 14px rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+}
+
+.personalinfo {
+  border: 3px solid rgb(231, 192, 232);
+  border-radius: 20px;
+}
+
+.namedata {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 5px 20px;
+}
+
+.locationinfo {
+  border: 3px solid rgb(231, 192, 232);
+  border-radius: 20px;
+}
+
+.origininfo {
+  border: 3px solid rgb(231, 192, 232);
+  border-radius: 20px;
+}
+
+.episodeinfo {
+  border: 3px solid rgb(231, 192, 232);
+  border-radius: 20px;
+}
+
+.episodeinfo div {
+  margin: 20px;
+  background-color: #ad658a;
+  max-height: 80vh;
+  border-radius: 20px;
+  padding: 25px;
+  overflow: auto;
+  box-shadow: inset 0 8px 80px -8px rgba(0, 0, 0, 0.5),
+    inset 0 -8px 80px -8px rgba(0, 0, 0, 0.5);
+}
+
+.episodeinfo div::-webkit-scrollbar {
+  width: 0px; /* width of the entire scrollbar */
+}
+
+@media screen and (max-width: 1150px) {
+}
+
+@media screen and (max-width: 650px) {
+}

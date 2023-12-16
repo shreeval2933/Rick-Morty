@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.episodecontainer {
+  background: #c463cc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.charactersdata {
+  margin: 20px;
+  background-color: #ad658a;
+  border: 3px solid rgb(244, 160, 225);
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: inset 0 8px 80px -8px rgba(0, 0, 0, 0.5),
+    inset 0 -8px 80px -8px rgba(0, 0, 0, 0.5);
+}
+
+.singlechar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.singlechar p {
+  color: #3e0343;
+  font-family: "Acme";
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.charactersdata img {
+  height: 75px;
+  width: 75px;
+  border: 2px solid purple;
+  border-radius: 8px;
+}

@@ -5,14 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AppProvider } from './context/characterContext.js';
 import { FilterContextProvider } from './context/filterContext.js';
+import { LocationProvider } from './context/locationContext.js';
+import { EpisodeProvider } from './context/episodeContext.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode> 
+    {/* AppProvider for character data */}
     <AppProvider>
-      <FilterContextProvider>
-        <App />
-      </FilterContextProvider>
+      {/* LocationProvider for location data */}
+      <LocationProvider>
+        {/* EpisodeProvider for episode data */}
+        <EpisodeProvider>
+          {/* FilterContextProvider for filter-related state */}
+          <FilterContextProvider>
+            <App />
+          </FilterContextProvider>
+        </EpisodeProvider>
+      </LocationProvider>
     </AppProvider>
   </React.StrictMode>
 );

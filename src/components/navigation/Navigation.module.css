@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  height: 45px;
+  align-items: center;
+  text-decoration: none;
+  background-color: rgb(243, 15, 228);
+}
+
+.link {
+  border: 2px solid rgb(43, 3, 39);
+  border-radius: 6px;
+  padding: 3px;
+  width: 350px;
+  text-decoration: none;
+  font-family: "Acme";
+  font-weight: 500;
+  background-color: rgb(233, 158, 233);
+  color: rgb(57, 9, 66);
+}
+
+.link:hover {
+  background-color: rgb(50, 2, 43);
+  color: white;
+}
+
+@media screen and (max-width: 1150px) {
+  .link {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .link {
+    width: 150px;
+  }
+}
