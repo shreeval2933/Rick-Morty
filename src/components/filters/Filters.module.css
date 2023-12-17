@@ -90,3 +90,15 @@
     width: 100px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .filters {
+    max-width: 100vw;
+    column-gap: 1px;
+    padding: 2px;
+  }
+  .filters select {
+    margin: 2px;
+    width: 60px;
+  }
+}

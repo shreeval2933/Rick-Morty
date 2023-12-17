@@ -38,13 +38,21 @@ const filterReducer = (state, action) => {
         case "UPDATE_FILTERS_VALUE":
             const {name, value} = action.payload;
 
+            if (state.filters[name] !== value) {
+                return {
+                ...state,
+                Loading : true,
+                filters: {
+                    ...state.filters,
+                    [name] : value,
+            }}
+            }
             return {
                 ...state,
                 filters: {
                     ...state.filters,
                     [name] : value,
-                }
-            };
+            }}
 
         // Action type to reset all filter values
         case "RESET_FILTERS":
@@ -80,7 +88,7 @@ const filterReducer = (state, action) => {
             if(search_text) {
                 tempFilterCharacter = tempFilterCharacter.filter((curElem) => {
                     console.log(`Name: ${curElem.name}, Search Text: ${search_text}`);
-                    return curElem.name.toLowerCase().includes(search_text);
+                    return curElem.name.toLowerCase().includes(search_text.toLowerCase());
                 });
             }
 
@@ -88,7 +96,7 @@ const filterReducer = (state, action) => {
             if(search_text) {
                 tempFilterLocation = tempFilterLocation.filter((curElem) => {
                     console.log(`Name: ${curElem.name}, Search Text: ${search_text}`);
-                    return curElem.name.toLowerCase().includes(search_text);
+                    return curElem.name.toLowerCase().includes(search_text.toLowerCase());
                 });
             }
 
@@ -96,7 +104,7 @@ const filterReducer = (state, action) => {
             if(search_text) {
                 tempFilterEpisode = tempFilterEpisode.filter((curElem) => {
                     console.log(`Name: ${curElem.name}, Search Text: ${search_text}`);
-                    return curElem.name.toLowerCase().includes(search_text);
+                    return curElem.name.toLowerCase().includes(search_text.toLowerCase());
                 });
             }
 
@@ -146,6 +154,7 @@ const filterReducer = (state, action) => {
             // Return the updated state with filtered characters, locations, and episodes
             return {
                 ...state,
+                Loading : false,
                 filter_location: tempFilterLocation,
                 filter_characters: tempFilterCharacter,
                 filter_episode: tempFilterEpisode,

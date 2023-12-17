@@ -86,3 +86,17 @@
 
 @media screen and (max-width: 650px) {
 }
+
+@media screen and (max-width: 450px) {
+  .singlecharacter img {
+    max-height: 270px;
+    max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .singlecharacter img {
+    max-height: 170px;
+    max-width: 170px;
+  }
+}

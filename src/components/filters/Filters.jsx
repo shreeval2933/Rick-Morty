@@ -46,7 +46,7 @@ const Filters = () => {
   return (
     <div className={style.filters}>
       {/* Status Filter */}
-      <select name="status" id="status" onClick={updateFilterValue}>
+      <select name="status" id="status" onChange={updateFilterValue}>
         {statusdata.map((currElem, index) => {
           return (
             <option key={index} value={currElem} name="status">
@@ -57,7 +57,7 @@ const Filters = () => {
       </select>
 
       {/* Location Filter */}
-      <select name="location" id="location" onClick={updateFilterValue}>
+      <select name="location" id="location" onChange={updateFilterValue}>
         {locationdata.map((currElem, index) => {
           return (
             <option key={index} value={currElem} name="location">
@@ -68,7 +68,7 @@ const Filters = () => {
       </select>
 
       {/* Episode Filter */}
-      <select name="episode" id="episode" onClick={updateFilterValue}>
+      <select name="episode" id="episode" onChange={updateFilterValue}>
         {episodedata.map((currElem, index) => {
           return (
             <option key={index} value={index} name="episode">
@@ -79,7 +79,7 @@ const Filters = () => {
       </select>
 
       {/* Gender Filter */}
-      <select name="gender" id="gender" onClick={updateFilterValue}>
+      <select name="gender" id="gender" onChange={updateFilterValue}>
         {genderdata.map((currElem, index) => {
           return (
             <option key={index} value={currElem} name="gender">
@@ -90,7 +90,7 @@ const Filters = () => {
       </select>
 
       {/* Species Filter */}
-      <select name="species" id="species" onClick={updateFilterValue}>
+      <select name="species" id="species" onChange={updateFilterValue}>
         {speciesdata.map((currElem, index) => {
           return (
             <option key={index} value={currElem} name="species">
@@ -101,7 +101,7 @@ const Filters = () => {
       </select>
 
       {/* Type Filter */}
-      <select name="type" id="type" onClick={updateFilterValue}>
+      <select name="type" id="type" onChange={updateFilterValue}>
         {typedata.map((currElem, index) => {
           return (
             <option key={index} value={currElem} name="type">

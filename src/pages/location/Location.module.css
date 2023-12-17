@@ -16,7 +16,7 @@
   font-weight: 400;
   font-family: "Acme";
   flex-grow: 1;
-  min-height: 80vh;
+  min-height: 85vh;
 }
 
 .card {
@@ -44,6 +44,33 @@
   border: 3px solid white;
 }
 
+.nolocationcards {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(45deg, #4e1131, #a970ae);
+  color: rgb(4, 1, 26);
+  font-weight: 600;
+  font-family: "Acme";
+  font-size: 30px;
+  min-height: 85vh;
+}
+
+.nolocationcards h2 {
+  margin-top: 100px;
+}
+
+.loader img {
+  height: 100px;
+  width: 100px;
+}
+
+.loader {
+  padding-top: 200px;
+  min-width: 100vw;
+  min-height: 85vh;
+  background: linear-gradient(45deg, #4e1131, #a970ae);
+}
+
 @media screen and (max-width: 1250px) {
   .locationcards {
     grid-template-columns: auto auto;
@@ -62,16 +89,16 @@
   .card {
     width: 282px;
   }
+
+  .loader img {
+    height: 60px;
+    width: 60px;
+  }
 }
 
-.loader img {
-  height: 100px;
-  width: 100px;
-}
-
-.loader {
-  padding-top: 200px;
-  min-width: 100vh;
-  min-height: 85vh;
-  background: linear-gradient(45deg, #4e1131, #a970ae);
+@media screen and (max-width: 450px) {
+  .nolocationcards {
+    padding: 10px;
+    font-size: 20px;
+  }
 }

@@ -10,6 +10,7 @@ const FilterContext = createContext();
 
 // Initial state for the filter application
 const initialState = {
+    Loading : false,
     filter_characters : [],
     all_characters: [],
     filter_location : [],
@@ -58,6 +59,7 @@ export const FilterContextProvider = ({children}) => {
 
     //update the filter values
     const updateFilterValue = (event) => {
+        dispatch({type: "SET_FILTER_LOADING"});
         let name = event.target.name;
         let value = event.target.value;
 
